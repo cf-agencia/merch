@@ -111,25 +111,32 @@
 
 
 
-        <div id="seccion-movimientos" class="hidden glass-card p-6 rounded-3xl mb-6">
-            <h2 class="text-lg font-bold mb-4">📊 Movimientos</h2>
+        <div id="seccion-movimientos" class="hidden">
+            <div class="glass-card p-4 rounded-3xl mb-6">
 
-            <div class="w-full">
-                <table class="w-full text-sm text-left border rounded-xl">
-                    <thead class="bg-indigo-100 text-indigo-700">
-                        <tr>
-                            <th class="p-3 w-[18%]">Souvenir</th>
-                            <th class="p-3 w-[18%]">Fecha</th>
-                            <th class="p-3 w-[18%]">Responsable</th>
-                            <th class="p-3 w-[12%]">Tipo</th>
-                            <th class="p-3 w-[10%]">Cantidad</th>
-                            <th class="p-3 w-[24%]">Comentarios</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabla-movimientos" class="bg-white">
-                        <!-- Aquí se cargan los datos -->
-                    </tbody>
-                </table>
+                <h2 class="text-lg font-bold mb-4 text-center">📊 Movimientos</h2>
+
+                <!-- CONTENEDOR CON SCROLL INTERNO -->
+                <div class="max-h-[400px] overflow-y-auto rounded-xl border">
+
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-indigo-100 text-indigo-700 sticky top-0 z-10">
+                            <tr>
+                                <th class="p-3 w-[18%]">Souvenir</th>
+                                <th class="p-3 w-[18%]">Fecha</th>
+                                <th class="p-3 w-[18%]">Responsable</th>
+                                <th class="p-3 w-[12%]">Tipo</th>
+                                <th class="p-3 w-[10%]">Cantidad</th>
+                                <th class="p-3 w-[24%]">Comentarios</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabla-movimientos" class="bg-white">
+                            <!-- datos -->
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
         </div>
     </div>
@@ -187,7 +194,7 @@
                 cargarMovimientos(); // 👈 importante
             }
         }
-        
+
         function formatearFecha(fechaISO) {
             const fecha = new Date(fechaISO);
 
