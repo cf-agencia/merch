@@ -185,14 +185,18 @@
                 return;
             }
 
+            // CORRECCIÓN: Asignar el valor a la variable global y al almacenamiento local
+            currentUser = user; 
+            localStorage.setItem('activeUser', user);
+
             document.getElementById("login-screen").classList.add("hidden");
             document.getElementById("inventory-screen").classList.remove("hidden");
             document.getElementById("display-user").innerText = user;
 
-            cargarMovimientos(); // 👈 IMPORTANTE
+            cargarMovimientos();
             actualizarStockCards();
-            
         }
+
 
         function mostrarSeccion(seccion) {
             const registro = document.getElementById("seccion-registro");
